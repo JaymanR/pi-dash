@@ -1,0 +1,3 @@
+E:\Frameworks\QT\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\desktop-client.dir/objects.a
+E:\Frameworks\QT\Tools\mingw1120_64\bin\ar.exe qc CMakeFiles\desktop-client.dir/objects.a @CMakeFiles\desktop-client.dir\objects1.rsp
+E:\Frameworks\QT\Tools\mingw1120_64\bin\g++.exe -DQT_QML_DEBUG -g -mwindows -Wl,--whole-archive CMakeFiles\desktop-client.dir/objects.a -Wl,--no-whole-archive -o desktop-client.exe -Wl,--out-implib,libdesktop-client.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\desktop-client.dir\linkLibs.rsp

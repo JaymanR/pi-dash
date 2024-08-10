@@ -1,10 +1,16 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
 #include <QSystemTrayIcon>
 
 #ifndef QT_NO_SYSTEMTRAYICON
+
+#include <QAction>
+#include <QMainWindow>
+#include <QMenu>
+#include <QCloseEvent>
+#include <QGridLayout>
+#include "buttonslot.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,14 +28,11 @@ public:
 
     void setVisible(bool visible) override;
 
+public slots:
+
+
 protected:
     void closeEvent(QCloseEvent *event) override;
-
-private slots:
-    //void setIcon(int index);
-    //void iconActivated(QSystemTrayIcon::ActivationReason reason);
-    //void showMessage();
-    //void messageClicked();
 
 private:
     Ui::MainWindow *ui;
@@ -37,11 +40,19 @@ private:
     void createActions();
     void createTrayIcon();
 
+    void populateButtonSlots(int row, int col);
+
+    void selectButtonSlot(int buttonId);
+    ButtonSlot* locateButtonSlot(int buttonId, int row, int col);
+
     QAction *restoreAction;
     QAction *quitAction;
 
     QSystemTrayIcon *trayIcon;
     QMenu *trayIconMenu;
+
+    QGridLayout *gridLayout;
+    ButtonSlot *selectedButton;
 };
 
 #endif // QT_NO_SYSTEMTRAYICON

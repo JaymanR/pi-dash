@@ -1,20 +1,27 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-#include <QMenu>
-#include <QCloseEvent>
+#include <QCoreApplication>
 #include <QMessageBox>
+
+#include <QDebug>
+
+constexpr int s_rows{2};
+constexpr int s_cols{3};
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , gridLayout(nullptr)
+    , selectedButton(nullptr)
 {
     ui->setupUi(this);
 
+    ui->buttonToolbar->setVisible(false);
+
+    populateButtonSlots(s_rows, s_cols);
     createActions();
     createTrayIcon();
-
-    trayIcon->show();
 
     setWindowTitle(tr("Pi Dash"));
 }
@@ -47,6 +54,35 @@ void MainWindow::createTrayIcon()
     trayIcon->setToolTip(tr("Pi Dash"));
 
     trayIcon->setContextMenu(trayIconMenu);
+    trayIcon->show();
+}
+
+void MainWindow::populateButtonSlots(int row, int col)
+{
+    QWidget *buttonContainer = ui->buttonEditor->findChild<QWidget*>("buttonContainer");
+    if (buttonContainer) {
+        if (!gridLayout) {
+            gridLayout = new QGridLayout(buttonContainer);
+        }
+        buttonContainer->setMaximumSize(500, 300);
+
+        buttonContainer->maximumSize();
+
+        int count{1};
+
+        for (int i{0}; i < row; i++) {
+            for (int j{0}; j < col; j++) {
+                ButtonSlot *buttonSlot = new ButtonSlot(buttonContainer, count);
+                count++;
+
+                connect(buttonSlot, &ButtonSlot::buttonSelected, this, &MainWindow::selectButtonSlot);
+
+                gridLayout->addWidget(buttonSlot, i, j);
+            }
+        }
+
+        buttonContainer->setLayout(gridLayout);
+    }
 }
 
 void MainWindow::setVisible(bool visible)
@@ -66,4 +102,32 @@ void MainWindow::closeEvent(QCloseEvent *event)
         hide();
         event->ignore();
     }
+}
+
+void MainWindow::selectButtonSlot(int buttonId)
+{
+
+    ButtonSlot *newButtonSlot = locateButtonSlot(buttonId, s_rows, s_cols);
+    if (newButtonSlot) {
+        if (selectedButton != newButtonSlot && selectedButton != nullptr) {
+            selectedButton->setSelected(false);
+        }
+        selectedButton = newButtonSlot;
+        selectedButton->setSelected(true);
+    }
+}
+
+ButtonSlot* MainWindow::locateButtonSlot(int buttonId, int row, int col)
+{
+    ButtonSlot *buttonSlot;
+    int rowIndex{(buttonId - 1)/ col};
+    int colIndex{(buttonId - 1) % col};
+
+    if (gridLayout) {
+        QLayoutItem *item = gridLayout->itemAtPosition(rowIndex, colIndex);
+        if (item) {
+            return qobject_cast<ButtonSlot*>(item->widget());
+        }
+    }
+    return nullptr;
 }

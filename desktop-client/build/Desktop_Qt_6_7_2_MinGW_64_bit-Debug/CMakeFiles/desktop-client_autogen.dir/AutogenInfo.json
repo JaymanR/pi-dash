@@ -258,6 +258,12 @@
 	"HEADERS" : 
 	[
 		[
+			"E:/Projects/QT/pi-dash/desktop-client/buttonslot.h",
+			"MU",
+			"EWIEGA46WW/moc_buttonslot.cpp",
+			null
+		],
+		[
 			"E:/Projects/QT/pi-dash/desktop-client/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -335,6 +341,7 @@
 	"SETTINGS_FILE" : "E:/Projects/QT/pi-dash/desktop-client/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/desktop-client_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "E:/Projects/QT/pi-dash/desktop-client/buttonslot.cpp", "MU", null ],
 		[ "E:/Projects/QT/pi-dash/desktop-client/main.cpp", "MU", null ],
 		[ "E:/Projects/QT/pi-dash/desktop-client/mainwindow.cpp", "MU", null ]
 	],

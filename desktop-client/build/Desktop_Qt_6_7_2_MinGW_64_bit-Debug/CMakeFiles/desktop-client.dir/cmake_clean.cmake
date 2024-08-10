@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/desktop-client.dir/buttonslot.cpp.obj"
+  "CMakeFiles/desktop-client.dir/buttonslot.cpp.obj.d"
   "CMakeFiles/desktop-client.dir/desktop-client_autogen/EWIEGA46WW/qrc_resources.cpp.obj"
   "CMakeFiles/desktop-client.dir/desktop-client_autogen/EWIEGA46WW/qrc_resources.cpp.obj.d"
   "CMakeFiles/desktop-client.dir/desktop-client_autogen/mocs_compilation.cpp.obj"

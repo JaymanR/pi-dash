@@ -1,5 +1,10 @@
 E:/Projects/QT/pi-dash/desktop-client/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/desktop-client_autogen/EWIEGA46WW/moc_mainwindow.cpp: E:/Projects/QT/pi-dash/desktop-client/mainwindow.h \
   E:/Projects/QT/pi-dash/desktop-client/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/desktop-client_autogen/moc_predefs.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/QList \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/QObject \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/QRect \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/QSize \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/QSizeF \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/q20functional.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/q20memory.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/q20type_traits.h \
@@ -29,10 +34,16 @@ E:/Projects/QT/pi-dash/desktop-client/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qcontainerinfo.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qcontainertools_impl.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qcontiguouscache.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qcoreapplication.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qcoreevent.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qdarwinhelpers.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qdatastream.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qdeadlinetimer.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qdebug.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qelapsedtimer.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qendian.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qeventloop.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qexceptionhandling.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qflags.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qfloat16.h \
@@ -44,12 +55,14 @@ E:/Projects/QT/pi-dash/desktop-client/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qglobalstatic.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qhash.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qhashfunctions.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qiodevice.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qiodevicebase.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qiterable.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qiterator.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qlatin1stringview.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qline.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qlist.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qlocale.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qlogging.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qmalloc.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qmap.h \
@@ -59,6 +72,7 @@ E:/Projects/QT/pi-dash/desktop-client/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qmetatype.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qminmax.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qnamespace.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qnativeinterface.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qnumeric.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qobject.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qobject_impl.h \
@@ -111,40 +125,63 @@ E:/Projects/QT/pi-dash/desktop-client/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qtversionchecks.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qtypeinfo.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qtypes.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qurl.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qutf8stringview.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qvariant.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qvarlengtharray.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qversiontagging.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qxptype_traits.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qyieldcpu.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/QAction \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/QCloseEvent \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/QTransform \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qaction.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qbitmap.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qbrush.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qcolor.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qcursor.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qevent.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qeventpoint.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qfont.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qfontinfo.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qfontmetrics.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qguiapplication.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qguiapplication_platform.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qicon.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qimage.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qinputdevice.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qinputmethod.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qkeysequence.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qpaintdevice.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qpalette.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qpixelformat.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qpixmap.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qpointingdevice.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qpolygon.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qregion.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qrgb.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qrgba64.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qscreen.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qscreen_platform.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qtgui-config.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qtguiexports.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qtguiglobal.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qtransform.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qvector2d.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qvectornd.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QGridLayout \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QMainWindow \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QMenu \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QSystemTrayIcon \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QWidget \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qboxlayout.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qgridlayout.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qlayout.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qlayoutitem.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qmainwindow.h \
+  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qmenu.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qsizepolicy.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qsystemtrayicon.h \
   E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qtabwidget.h \
@@ -350,4 +387,5 @@ E:/Projects/QT/pi-dash/desktop-client/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   E:/Frameworks/QT/Tools/mingw1120_64/x86_64-w64-mingw32/include/sys/types.h \
   E:/Frameworks/QT/Tools/mingw1120_64/x86_64-w64-mingw32/include/time.h \
   E:/Frameworks/QT/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
-  E:/Frameworks/QT/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h
+  E:/Frameworks/QT/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
+  E:/Projects/QT/pi-dash/desktop-client/buttonslot.h

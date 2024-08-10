@@ -133,11 +133,26 @@ CMakeFiles/desktop-client.dir/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/desktop-client.dir/mainwindow.cpp.s"
 	E:\Frameworks\QT\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Projects\QT\pi-dash\desktop-client\mainwindow.cpp -o CMakeFiles\desktop-client.dir\mainwindow.cpp.s
 
+CMakeFiles/desktop-client.dir/buttonslot.cpp.obj: CMakeFiles/desktop-client.dir/flags.make
+CMakeFiles/desktop-client.dir/buttonslot.cpp.obj: CMakeFiles/desktop-client.dir/includes_CXX.rsp
+CMakeFiles/desktop-client.dir/buttonslot.cpp.obj: E:/Projects/QT/pi-dash/desktop-client/buttonslot.cpp
+CMakeFiles/desktop-client.dir/buttonslot.cpp.obj: CMakeFiles/desktop-client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Projects\QT\pi-dash\desktop-client\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/desktop-client.dir/buttonslot.cpp.obj"
+	E:\Frameworks\QT\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/desktop-client.dir/buttonslot.cpp.obj -MF CMakeFiles\desktop-client.dir\buttonslot.cpp.obj.d -o CMakeFiles\desktop-client.dir\buttonslot.cpp.obj -c E:\Projects\QT\pi-dash\desktop-client\buttonslot.cpp
+
+CMakeFiles/desktop-client.dir/buttonslot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/desktop-client.dir/buttonslot.cpp.i"
+	E:\Frameworks\QT\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Projects\QT\pi-dash\desktop-client\buttonslot.cpp > CMakeFiles\desktop-client.dir\buttonslot.cpp.i
+
+CMakeFiles/desktop-client.dir/buttonslot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/desktop-client.dir/buttonslot.cpp.s"
+	E:\Frameworks\QT\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Projects\QT\pi-dash\desktop-client\buttonslot.cpp -o CMakeFiles\desktop-client.dir\buttonslot.cpp.s
+
 CMakeFiles/desktop-client.dir/desktop-client_autogen/EWIEGA46WW/qrc_resources.cpp.obj: CMakeFiles/desktop-client.dir/flags.make
 CMakeFiles/desktop-client.dir/desktop-client_autogen/EWIEGA46WW/qrc_resources.cpp.obj: CMakeFiles/desktop-client.dir/includes_CXX.rsp
 CMakeFiles/desktop-client.dir/desktop-client_autogen/EWIEGA46WW/qrc_resources.cpp.obj: desktop-client_autogen/EWIEGA46WW/qrc_resources.cpp
 CMakeFiles/desktop-client.dir/desktop-client_autogen/EWIEGA46WW/qrc_resources.cpp.obj: CMakeFiles/desktop-client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Projects\QT\pi-dash\desktop-client\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/desktop-client.dir/desktop-client_autogen/EWIEGA46WW/qrc_resources.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Projects\QT\pi-dash\desktop-client\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/desktop-client.dir/desktop-client_autogen/EWIEGA46WW/qrc_resources.cpp.obj"
 	E:\Frameworks\QT\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/desktop-client.dir/desktop-client_autogen/EWIEGA46WW/qrc_resources.cpp.obj -MF CMakeFiles\desktop-client.dir\desktop-client_autogen\EWIEGA46WW\qrc_resources.cpp.obj.d -o CMakeFiles\desktop-client.dir\desktop-client_autogen\EWIEGA46WW\qrc_resources.cpp.obj -c E:\Projects\QT\pi-dash\desktop-client\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\desktop-client_autogen\EWIEGA46WW\qrc_resources.cpp
 
 CMakeFiles/desktop-client.dir/desktop-client_autogen/EWIEGA46WW/qrc_resources.cpp.i: cmake_force
@@ -153,6 +168,7 @@ desktop__client_OBJECTS = \
 "CMakeFiles/desktop-client.dir/desktop-client_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/desktop-client.dir/main.cpp.obj" \
 "CMakeFiles/desktop-client.dir/mainwindow.cpp.obj" \
+"CMakeFiles/desktop-client.dir/buttonslot.cpp.obj" \
 "CMakeFiles/desktop-client.dir/desktop-client_autogen/EWIEGA46WW/qrc_resources.cpp.obj"
 
 # External object files for target desktop-client
@@ -161,6 +177,7 @@ desktop__client_EXTERNAL_OBJECTS =
 desktop-client.exe: CMakeFiles/desktop-client.dir/desktop-client_autogen/mocs_compilation.cpp.obj
 desktop-client.exe: CMakeFiles/desktop-client.dir/main.cpp.obj
 desktop-client.exe: CMakeFiles/desktop-client.dir/mainwindow.cpp.obj
+desktop-client.exe: CMakeFiles/desktop-client.dir/buttonslot.cpp.obj
 desktop-client.exe: CMakeFiles/desktop-client.dir/desktop-client_autogen/EWIEGA46WW/qrc_resources.cpp.obj
 desktop-client.exe: CMakeFiles/desktop-client.dir/build.make
 desktop-client.exe: E:/Frameworks/QT/6.7.2/mingw_64/lib/libQt6Widgets.a
@@ -170,7 +187,7 @@ desktop-client.exe: E:/Frameworks/QT/6.7.2/mingw_64/lib/libQt6EntryPoint.a
 desktop-client.exe: CMakeFiles/desktop-client.dir/linkLibs.rsp
 desktop-client.exe: CMakeFiles/desktop-client.dir/objects1.rsp
 desktop-client.exe: CMakeFiles/desktop-client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=E:\Projects\QT\pi-dash\desktop-client\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable desktop-client.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=E:\Projects\QT\pi-dash\desktop-client\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable desktop-client.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\desktop-client.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

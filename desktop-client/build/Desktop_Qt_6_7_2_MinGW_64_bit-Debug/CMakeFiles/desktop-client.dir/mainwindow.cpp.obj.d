@@ -1,8 +1,8 @@
 CMakeFiles/desktop-client.dir/mainwindow.cpp.obj: \
  E:\Projects\QT\pi-dash\desktop-client\mainwindow.cpp \
  E:\Projects\QT\pi-dash\desktop-client\mainwindow.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QMainWindow \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qmainwindow.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QSystemTrayIcon \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qsystemtrayicon.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qtguiglobal.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qglobal.h \
@@ -144,8 +144,7 @@ CMakeFiles/desktop-client.dir/mainwindow.cpp.obj: \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qtguiexports.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qwidget.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qobject.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qobjectdefs.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qnamespace.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qtmetamacros.h \
@@ -202,8 +201,6 @@ CMakeFiles/desktop-client.dir/mainwindow.cpp.obj: \
  E:/Frameworks/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward/auto_ptr.h \
  E:/Frameworks/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/pstl/glue_memory_defs.h \
  E:/Frameworks/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/pstl/execution_defs.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs_win.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qobject.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qstring.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qchar.h \
  E:/Frameworks/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/functional \
@@ -320,14 +317,14 @@ CMakeFiles/desktop-client.dir/mainwindow.cpp.obj: \
  E:/Frameworks/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/chrono \
  E:/Frameworks/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ratio \
  E:/Frameworks/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ctime \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qmargins.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/q23utility.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qaction.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qkeysequence.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qicon.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qsize.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qmargins.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/q23utility.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qpixmap.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qpaintdevice.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qwindowdefs_win.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qrect.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qpoint.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qcolor.h \
@@ -340,6 +337,9 @@ CMakeFiles/desktop-client.dir/mainwindow.cpp.obj: \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qpolygon.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qregion.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qline.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/QAction \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qaction.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qkeysequence.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qvariant.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qdebug.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qtextstream.h \
@@ -352,6 +352,10 @@ CMakeFiles/desktop-client.dir/mainwindow.cpp.obj: \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qset.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qhash.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qvarlengtharray.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QMainWindow \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qmainwindow.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qwidget.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qaction.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qpalette.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qbrush.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qfont.h \
@@ -362,48 +366,11 @@ CMakeFiles/desktop-client.dir/mainwindow.cpp.obj: \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qcursor.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qbitmap.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qtabwidget.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QSystemTrayIcon \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qsystemtrayicon.h \
- E:/Projects/QT/pi-dash/desktop-client/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/desktop-client_autogen/include/ui_mainwindow.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/QVariant \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qvariant.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/QIcon \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qicon.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QApplication \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qapplication.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qcoreapplication.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qcoreevent.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qdeadlinetimer.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qelapsedtimer.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qeventloop.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qnativeinterface.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qguiapplication.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qinputmethod.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qlocale.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qguiapplication_platform.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QHBoxLayout \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qboxlayout.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qlayout.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qlayoutitem.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qboxlayout.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qgridlayout.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QMainWindow \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QPushButton \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qpushbutton.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qabstractbutton.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QSpacerItem \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qlayoutitem.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QStackedWidget \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qstackedwidget.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qframe.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QVBoxLayout \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QWidget \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qwidget.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QMenu \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qmenu.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/QCloseEvent \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qevent.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qcoreevent.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qiodevice.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qurl.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qeventpoint.h \
@@ -423,8 +390,65 @@ CMakeFiles/desktop-client.dir/mainwindow.cpp.obj: \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/QSizeF \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/QTransform \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qtransform.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qnativeinterface.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qscreen_platform.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qguiapplication.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qcoreapplication.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qelapsedtimer.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qeventloop.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qinputmethod.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qlocale.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QGridLayout \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qgridlayout.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qlayout.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qlayoutitem.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qboxlayout.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qgridlayout.h \
+ E:\Projects\QT\pi-dash\desktop-client\buttonslot.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QWidget \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qwidget.h \
+ E:/Projects/QT/pi-dash/desktop-client/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/desktop-client_autogen/include/ui_mainwindow.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/QVariant \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qvariant.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/QIcon \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qicon.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QApplication \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qapplication.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QFormLayout \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qformlayout.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QLayout \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qlayout.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QHBoxLayout \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qboxlayout.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QMainWindow \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QPushButton \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qpushbutton.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QSpacerItem \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qlayoutitem.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QStackedWidget \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qstackedwidget.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qframe.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QVBoxLayout \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QWidget \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/QCoreApplication \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qcoreapplication.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QMessageBox \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qmessagebox.h \
  E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qdialog.h \
- E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/QDebug \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtCore/qdebug.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QLabel \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qlabel.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qpicture.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qtextdocument.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/QLineEdit \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtWidgets/qlineedit.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qtextcursor.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qtextformat.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qpen.h \
+ E:/Frameworks/QT/6.7.2/mingw_64/include/QtGui/qtextoption.h

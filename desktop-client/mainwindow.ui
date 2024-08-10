@@ -79,42 +79,6 @@ border: none;
         <item>
          <widget class="QWidget" name="buttonContainer" native="true"/>
         </item>
-        <item>
-         <widget class="QWidget" name="buttonToolbar" native="true">
-          <layout class="QFormLayout" name="formLayout_2">
-           <item row="0" column="0">
-            <widget class="QLabel" name="name">
-             <property name="text">
-              <string>Name</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="type">
-             <property name="text">
-              <string>Type</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="action">
-             <property name="text">
-              <string>Action</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QComboBox" name="comboBox"/>
-           </item>
-           <item row="1" column="1">
-            <widget class="QComboBox" name="comboBox_2"/>
-           </item>
-           <item row="2" column="1">
-            <widget class="QComboBox" name="comboBox_3"/>
-           </item>
-          </layout>
-         </widget>
-        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="settings">

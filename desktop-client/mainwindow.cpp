@@ -5,6 +5,8 @@
 #include <QMessageBox>
 
 #include <QDebug>
+#include <QLabel>
+#include <QLineEdit>
 
 constexpr int s_rows{2};
 constexpr int s_cols{3};
@@ -14,10 +16,11 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
     , gridLayout(nullptr)
     , selectedButton(nullptr)
+    ,buttonToolbar(nullptr)
 {
     ui->setupUi(this);
 
-    ui->buttonToolbar->setVisible(false);
+    //hideButtonToolbar();
 
     populateButtonSlots(s_rows, s_cols);
     createActions();
@@ -55,6 +58,59 @@ void MainWindow::createTrayIcon()
 
     trayIcon->setContextMenu(trayIconMenu);
     trayIcon->show();
+}
+
+void MainWindow::hideButtonToolbar()
+{
+    if (buttonToolbar){
+        buttonToolbar->setVisible(false);
+    } else {
+        QMessageBox::critical(this, "Error", "Error: No Button Toolbar displayed");
+    }
+}
+
+void MainWindow::updateButtonToolbar(int buttonId)
+{
+    if (buttonToolbar) {
+        buttonToolbar->deleteLater();
+        buttonToolbar = nullptr;
+    }
+
+    QWidget *buttonEditor = ui->buttonEditor;
+    if (buttonEditor) {
+        buttonToolbar = new QWidget(buttonEditor);
+
+        QFormLayout *layout = new QFormLayout(buttonToolbar);
+
+        QLabel *titleLabel = new QLabel(buttonToolbar);
+        titleLabel->setText(tr("Button %1").arg(buttonId));
+
+        QFont titleFont = titleLabel->font();
+        titleFont.setPointSize(12);
+        //titleFont.setBold(true);
+        titleLabel->setFont(titleFont);
+        titleLabel->setAlignment(Qt::AlignCenter);
+
+        layout->addRow(titleLabel);
+
+        QLabel *nameLabel = new QLabel(buttonToolbar);
+        nameLabel->setText(tr("Name"));
+
+        QLineEdit *nameLineEdit = new QLineEdit(buttonToolbar);
+
+        layout->addRow(nameLabel, nameLineEdit);
+
+        //need to add action and Hotkey later
+
+        buttonToolbar->setLayout(layout);
+
+        QHBoxLayout *editorLayout = qobject_cast<QHBoxLayout*>(buttonEditor->layout());
+
+        editorLayout->addWidget(buttonToolbar);
+        editorLayout->setAlignment(buttonToolbar, Qt::AlignCenter);
+    } else {
+        QMessageBox::critical(this, "Error", "Error: No Button Editor Found");
+    }
 }
 
 void MainWindow::populateButtonSlots(int row, int col)
@@ -106,7 +162,6 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::selectButtonSlot(int buttonId)
 {
-
     ButtonSlot *newButtonSlot = locateButtonSlot(buttonId, s_rows, s_cols);
     if (newButtonSlot) {
         if (selectedButton != newButtonSlot && selectedButton != nullptr) {
@@ -114,13 +169,15 @@ void MainWindow::selectButtonSlot(int buttonId)
         }
         selectedButton = newButtonSlot;
         selectedButton->setSelected(true);
+
+        updateButtonToolbar(buttonId);
     }
 }
 
 ButtonSlot* MainWindow::locateButtonSlot(int buttonId, int row, int col)
 {
     ButtonSlot *buttonSlot;
-    int rowIndex{(buttonId - 1)/ col};
+    int rowIndex{(buttonId - 1) / col};
     int colIndex{(buttonId - 1) % col};
 
     if (gridLayout) {

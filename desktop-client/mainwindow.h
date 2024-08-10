@@ -40,8 +40,10 @@ private:
     void createActions();
     void createTrayIcon();
 
-    void populateButtonSlots(int row, int col);
+    void hideButtonToolbar();
+    void updateButtonToolbar(int buttonId);
 
+    void populateButtonSlots(int row, int col);
     void selectButtonSlot(int buttonId);
     ButtonSlot* locateButtonSlot(int buttonId, int row, int col);
 
@@ -53,6 +55,8 @@ private:
 
     QGridLayout *gridLayout;
     ButtonSlot *selectedButton;
+
+    QWidget *buttonToolbar;
 };
 
 #endif // QT_NO_SYSTEMTRAYICON

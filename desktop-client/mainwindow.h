@@ -10,6 +10,7 @@
 #include <QMenu>
 #include <QCloseEvent>
 #include <QGridLayout>
+#include <QKeySequence>
 #include "buttonslot.h"
 
 QT_BEGIN_NAMESPACE
@@ -43,6 +44,8 @@ private:
     void hideButtonToolbar();
     void updateButtonToolbar(int buttonId);
 
+    void onKeySequenceChanged(const QKeySequence &keySequence);
+
     void populateButtonSlots(int row, int col);
     void selectButtonSlot(int buttonId);
     ButtonSlot* locateButtonSlot(int buttonId, int row, int col);
@@ -57,6 +60,7 @@ private:
     ButtonSlot *selectedButton;
 
     QWidget *buttonToolbar;
+    QKeySequence recordedKeySequence;
 };
 
 #endif // QT_NO_SYSTEMTRAYICON

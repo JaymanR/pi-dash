@@ -3,20 +3,22 @@
 
 #include <QCoreApplication>
 #include <QMessageBox>
-
 #include <QDebug>
 #include <QLabel>
 #include <QLineEdit>
+#include <QKeySequenceEdit>
+#include "hotkeyedit.h"
 
-constexpr int s_rows{2};
-constexpr int s_cols{3};
+constexpr int s_rows{1};
+constexpr int s_cols{2};
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , gridLayout(nullptr)
     , selectedButton(nullptr)
-    ,buttonToolbar(nullptr)
+    , buttonToolbar(nullptr)
+    , recordedKeySequence(nullptr)
 {
     ui->setupUi(this);
 
@@ -84,21 +86,29 @@ void MainWindow::updateButtonToolbar(int buttonId)
 
         QLabel *titleLabel = new QLabel(buttonToolbar);
         titleLabel->setText(tr("Button %1").arg(buttonId));
-
         QFont titleFont = titleLabel->font();
         titleFont.setPointSize(12);
-        //titleFont.setBold(true);
         titleLabel->setFont(titleFont);
-        titleLabel->setAlignment(Qt::AlignCenter);
-
-        layout->addRow(titleLabel);
+        titleLabel->setAlignment(Qt::AlignCenter); 
 
         QLabel *nameLabel = new QLabel(buttonToolbar);
         nameLabel->setText(tr("Name"));
-
         QLineEdit *nameLineEdit = new QLineEdit(buttonToolbar);
 
+        QLabel *hotkeyLabel = new QLabel(buttonToolbar);
+        hotkeyLabel->setText(tr("Hotkey"));
+        HotkeyEdit *hotkeyEdit = new HotkeyEdit(buttonToolbar);
+
+        /* testing input emulation
+        QPushButton *execute = new QPushButton(buttonToolbar);
+        execute->setStyleSheet("border: 2px solid white");
+        connect(execute, &QPushButton::clicked, this, [hotkeyEdit]() {
+            hotkeyEdit->getHotkey().execute();
+        });*/
+
+        layout->addRow(titleLabel);
         layout->addRow(nameLabel, nameLineEdit);
+        layout->addRow(hotkeyLabel, hotkeyEdit);
 
         //need to add action and Hotkey later
 
@@ -113,6 +123,11 @@ void MainWindow::updateButtonToolbar(int buttonId)
     }
 }
 
+void MainWindow::onKeySequenceChanged(const QKeySequence &keySequence)
+{
+    recordedKeySequence = keySequence;
+}
+
 void MainWindow::populateButtonSlots(int row, int col)
 {
     QWidget *buttonContainer = ui->buttonEditor->findChild<QWidget*>("buttonContainer");
@@ -121,22 +136,17 @@ void MainWindow::populateButtonSlots(int row, int col)
             gridLayout = new QGridLayout(buttonContainer);
         }
         buttonContainer->setMaximumSize(500, 300);
-
         buttonContainer->maximumSize();
 
         int count{1};
-
         for (int i{0}; i < row; i++) {
             for (int j{0}; j < col; j++) {
                 ButtonSlot *buttonSlot = new ButtonSlot(buttonContainer, count);
-                count++;
-
                 connect(buttonSlot, &ButtonSlot::buttonSelected, this, &MainWindow::selectButtonSlot);
-
                 gridLayout->addWidget(buttonSlot, i, j);
+                count++;
             }
         }
-
         buttonContainer->setLayout(gridLayout);
     }
 }

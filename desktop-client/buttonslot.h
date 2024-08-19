@@ -23,9 +23,10 @@ protected:
     void mousePressEvent(QMouseEvent *event) override;
 
 private:
+    const int m_buttonId;
     bool m_isHovered{false};
     bool m_isSelected{false};
-    const int m_buttonId;
+
 };
 
 #endif // BUTTONSLOT_H

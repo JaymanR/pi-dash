@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QGridLayout>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,5 +20,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    void populateButtonSlots(int row, int col);
+
+    QGridLayout *gridLayout;
 };
 #endif // MAINWINDOW_H

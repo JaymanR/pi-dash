@@ -30,7 +30,35 @@ background-color: #1A1A1A;
 QPushButton {
 background-color: transparent;
 border: none;
-}</string>
+}
+
+QPushButton#connectButton {
+    background-color: #2A2A2A;
+    color: white;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #3A3A3A;
+    /*transition: background-color 0.3s ease, border-color 0.3s ease;*/
+}
+
+#connectButton:hover {
+    background-color: #3A3A3A;
+    border-color: #4A4A4A;
+}
+
+#connectButton:pressed {
+    background-color: #1A1A1A;
+    border-color: #2A2A2A;
+}
+
+#connectButton:disabled {
+    background-color: #3A3A3A;
+    color: #757575;
+    border-color: #4A4A4A;
+}
+</string>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
@@ -54,7 +82,7 @@ border: none;
         </widget>
        </item>
        <item>
-        <spacer name="verticalSpacer">
+        <spacer name="buttonsVSpacer">
          <property name="orientation">
           <enum>Qt::Orientation::Vertical</enum>
          </property>
@@ -66,13 +94,30 @@ border: none;
          </property>
         </spacer>
        </item>
+       <item>
+        <widget class="QPushButton" name="settingsButton">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/icons/icons/settings.svg</normaloff>:/icons/icons/settings.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </item>
     <item>
      <widget class="QStackedWidget" name="mainBody">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="buttonEditor">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -82,7 +127,52 @@ border: none;
        </layout>
       </widget>
       <widget class="QWidget" name="settings">
-       <layout class="QFormLayout" name="formLayout"/>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QWidget" name="connectionContainer" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLabel" name="connectionTitle">
+             <property name="font">
+              <font>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Connections</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QListWidget" name="deviceList"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="connectButton">
+             <property name="text">
+              <string>Connect</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="connectionsHSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>

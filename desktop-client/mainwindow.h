@@ -11,6 +11,7 @@
 #include <QCloseEvent>
 #include <QGridLayout>
 #include <QKeySequence>
+#include <QUdpSocket>
 #include "buttonslot.h"
 
 QT_BEGIN_NAMESPACE
@@ -61,6 +62,12 @@ private:
 
     QWidget *buttonToolbar;
     QKeySequence recordedKeySequence;
+
+    QUdpSocket *udpSocket;
+
+private slots:
+    void showButtonEditor();
+    void showSettings();
 };
 
 #endif // QT_NO_SYSTEMTRAYICON

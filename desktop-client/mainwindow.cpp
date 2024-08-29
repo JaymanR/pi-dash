@@ -7,6 +7,7 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QKeySequenceEdit>
+#include <QFormLayout>
 #include "hotkeyedit.h"
 
 constexpr int s_rows{1};
@@ -19,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     , selectedButton(nullptr)
     , buttonToolbar(nullptr)
     , recordedKeySequence(nullptr)
+    , udpSocket(new QUdpSocket(this))
 {
     ui->setupUi(this);
 
@@ -27,6 +29,12 @@ MainWindow::MainWindow(QWidget *parent)
     populateButtonSlots(s_rows, s_cols);
     createActions();
     createTrayIcon();
+
+    connect(ui->editorButton, &QPushButton::clicked, this, &MainWindow::showButtonEditor);
+    connect(ui->settingsButton, &QPushButton::clicked, this, &MainWindow::showSettings);
+
+    udpSocket->bind(QHostAddress::Any, 45454);
+    //connect(udpSocket, &QUdpSocket::readyRead, this, &MainWindow::closeEvent);
 
     setWindowTitle(tr("Pi Dash"));
 }
@@ -197,4 +205,14 @@ ButtonSlot* MainWindow::locateButtonSlot(int buttonId, int row, int col)
         }
     }
     return nullptr;
+}
+
+void MainWindow::showButtonEditor()
+{
+    ui->mainBody->setCurrentWidget(ui->buttonEditor);
+}
+
+void MainWindow::showSettings()
+{
+    ui->mainBody->setCurrentWidget(ui->settings);
 }

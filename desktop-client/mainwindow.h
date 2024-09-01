@@ -13,6 +13,7 @@
 #include <QKeySequence>
 #include <QUdpSocket>
 #include "buttonslot.h"
+#include "receiver.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -48,7 +49,6 @@ private:
     void onKeySequenceChanged(const QKeySequence &keySequence);
 
     void populateButtonSlots(int row, int col);
-    void selectButtonSlot(int buttonId);
     ButtonSlot* locateButtonSlot(int buttonId, int row, int col);
 
     QAction *restoreAction;
@@ -63,11 +63,17 @@ private:
     QWidget *buttonToolbar;
     QKeySequence recordedKeySequence;
 
-    QUdpSocket *udpSocket;
+    Receiver *receiver;
+    QHostAddress *senderAddress;
 
 private slots:
+    void selectButtonSlot(int buttonId);
     void showButtonEditor();
     void showSettings();
+    void onDeviceListItemSelect();
+    void showConnectionRequests(QHostAddress sender, quint16 port);
+    void connectAddress();
+
 };
 
 #endif // QT_NO_SYSTEMTRAYICON

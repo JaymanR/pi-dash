@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     , selectedButton(nullptr)
     , buttonToolbar(nullptr)
     , recordedKeySequence(nullptr)
-    , udpSocket(new QUdpSocket(this))
+    , receiver(new Receiver(this))
 {
     ui->setupUi(this);
 
@@ -33,8 +33,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->editorButton, &QPushButton::clicked, this, &MainWindow::showButtonEditor);
     connect(ui->settingsButton, &QPushButton::clicked, this, &MainWindow::showSettings);
 
-    udpSocket->bind(QHostAddress::Any, 45454);
-    //connect(udpSocket, &QUdpSocket::readyRead, this, &MainWindow::closeEvent);
+    connect(ui->deviceList, &QListWidget::itemClicked, this, &MainWindow::onDeviceListItemSelect);
+    connect(ui->connectButton, &QPushButton::clicked, this, &MainWindow::connectAddress);
+
+    connect(receiver, &Receiver::connectionRequest, this, &MainWindow::showConnectionRequests);
 
     setWindowTitle(tr("Pi Dash"));
 }
@@ -215,4 +217,39 @@ void MainWindow::showButtonEditor()
 void MainWindow::showSettings()
 {
     ui->mainBody->setCurrentWidget(ui->settings);
+}
+
+void MainWindow::showConnectionRequests(QHostAddress sender, quint16 port)
+{
+    QListWidget *listWidget = ui->deviceList;
+
+    QString addressString;
+
+    quint32 ipv4Address = sender.toIPv4Address();
+    if (ipv4Address != 0) {
+        addressString = QHostAddress(ipv4Address).toString();
+    } else {
+        addressString = sender.toString();
+    }
+
+    for (int i{0}; i < listWidget->count(); i++) {
+        if (listWidget->item(i)->text().compare(addressString) == 0) {
+            return;
+        }
+    }
+
+    QListWidgetItem *item = new QListWidgetItem(addressString, listWidget);
+    listWidget->addItem(item);
+}
+
+void MainWindow::onDeviceListItemSelect()
+{
+    ui->connectButton->setEnabled(true);
+}
+
+void MainWindow::connectAddress()
+{
+    QListWidgetItem *item = ui->deviceList->currentItem();
+    //qDebug() << item->text();
+    senderAddress = new QHostAddress(item->text());
 }

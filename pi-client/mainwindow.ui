@@ -21,7 +21,27 @@ background-color: #121212;
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QWidget" name="buttonContainer" native="true"/>
+     <widget class="QStackedWidget" name="mainBody">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="connectionPage">
+       <widget class="QPushButton" name="broadcastButton">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>280</y>
+          <width>131</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Broadcast Connection</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="buttonContainer"/>
+     </widget>
     </item>
    </layout>
   </widget>

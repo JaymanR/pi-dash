@@ -9,10 +9,16 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , gridLayout(nullptr)
+    , networkHandler(new NetworkHandler(this))
 {
     ui->setupUi(this);
 
     populateButtonSlots(s_rows, s_cols);
+
+    connect(ui->broadcastButton, &QPushButton::clicked,
+            networkHandler, &NetworkHandler::startBroadcasting);
+    connect(networkHandler, &NetworkHandler::requestAccepted,
+            this, &MainWindow::onConnectionAccepted);
 }
 
 MainWindow::~MainWindow()
@@ -41,4 +47,14 @@ void MainWindow::populateButtonSlots(int row, int col)
         }
         buttonContainer->setLayout(gridLayout);
     }
+}
+
+void MainWindow::broadcastConnection()
+{
+
+}
+
+void MainWindow::onConnectionAccepted()
+{
+    ui->mainBody->setCurrentWidget(ui->buttonContainer);
 }

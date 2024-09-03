@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QGridLayout>
+#include "networkhandler.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,5 +25,12 @@ private:
     void populateButtonSlots(int row, int col);
 
     QGridLayout *gridLayout;
+
+    //Sender *sender;
+    NetworkHandler *networkHandler;
+
+private slots:
+    void broadcastConnection();
+    void onConnectionAccepted();
 };
 #endif // MAINWINDOW_H

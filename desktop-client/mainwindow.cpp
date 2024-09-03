@@ -13,6 +13,8 @@
 constexpr int s_rows{1};
 constexpr int s_cols{2};
 
+constexpr quint16 s_port{45454};
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -20,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     , selectedButton(nullptr)
     , buttonToolbar(nullptr)
     , recordedKeySequence(nullptr)
-    , receiver(new Receiver(this))
+    , networkHandler(new NetworkHandler(this))
 {
     ui->setupUi(this);
 
@@ -30,13 +32,18 @@ MainWindow::MainWindow(QWidget *parent)
     createActions();
     createTrayIcon();
 
-    connect(ui->editorButton, &QPushButton::clicked, this, &MainWindow::showButtonEditor);
-    connect(ui->settingsButton, &QPushButton::clicked, this, &MainWindow::showSettings);
+    connect(ui->editorButton, &QPushButton::clicked,
+            this, &MainWindow::showButtonEditor);
+    connect(ui->settingsButton, &QPushButton::clicked,
+            this, &MainWindow::showSettings);
 
-    connect(ui->deviceList, &QListWidget::itemClicked, this, &MainWindow::onDeviceListItemSelect);
-    connect(ui->connectButton, &QPushButton::clicked, this, &MainWindow::connectAddress);
+    connect(ui->deviceList, &QListWidget::itemClicked,
+            this, &MainWindow::onDeviceListItemSelect);
+    connect(ui->connectButton, &QPushButton::clicked,
+            this, &MainWindow::connectAddress);
 
-    connect(receiver, &Receiver::connectionRequest, this, &MainWindow::showConnectionRequests);
+    connect(networkHandler, &NetworkHandler::connectionRequest,
+            this, &MainWindow::showConnectionRequests);
 
     setWindowTitle(tr("Pi Dash"));
 }
@@ -49,10 +56,12 @@ MainWindow::~MainWindow()
 void MainWindow::createActions()
 {
     restoreAction = new QAction(tr("Show"), this);
-    connect(restoreAction, &QAction::triggered, this, &QWidget::showNormal);
+    connect(restoreAction, &QAction::triggered,
+            this, &QWidget::showNormal);
 
     quitAction = new QAction(tr("&Quit"), this);
-    connect(quitAction, &QAction::triggered, qApp, &QCoreApplication::quit);
+    connect(quitAction, &QAction::triggered,
+            qApp, &QCoreApplication::quit);
 }
 
 void MainWindow::createTrayIcon()
@@ -77,7 +86,8 @@ void MainWindow::hideButtonToolbar()
     if (buttonToolbar){
         buttonToolbar->setVisible(false);
     } else {
-        QMessageBox::critical(this, "Error", "Error: No Button Toolbar displayed");
+        QMessageBox::critical(this, "Error",
+                              "Error: No Button Toolbar displayed");
     }
 }
 
@@ -124,12 +134,14 @@ void MainWindow::updateButtonToolbar(int buttonId)
 
         buttonToolbar->setLayout(layout);
 
-        QHBoxLayout *editorLayout = qobject_cast<QHBoxLayout*>(buttonEditor->layout());
+        QHBoxLayout *editorLayout
+            = qobject_cast<QHBoxLayout*>(buttonEditor->layout());
 
         editorLayout->addWidget(buttonToolbar);
         editorLayout->setAlignment(buttonToolbar, Qt::AlignCenter);
     } else {
-        QMessageBox::critical(this, "Error", "Error: No Button Editor Found");
+        QMessageBox::critical(this, "Error",
+                              "Error: No Button Editor Found");
     }
 }
 
@@ -140,7 +152,8 @@ void MainWindow::onKeySequenceChanged(const QKeySequence &keySequence)
 
 void MainWindow::populateButtonSlots(int row, int col)
 {
-    QWidget *buttonContainer = ui->buttonEditor->findChild<QWidget*>("buttonContainer");
+    QWidget *buttonContainer
+        = ui->buttonEditor->findChild<QWidget*>("buttonContainer");
     if (buttonContainer) {
         if (!gridLayout) {
             gridLayout = new QGridLayout(buttonContainer);
@@ -152,7 +165,8 @@ void MainWindow::populateButtonSlots(int row, int col)
         for (int i{0}; i < row; i++) {
             for (int j{0}; j < col; j++) {
                 ButtonSlot *buttonSlot = new ButtonSlot(buttonContainer, count);
-                connect(buttonSlot, &ButtonSlot::buttonSelected, this, &MainWindow::selectButtonSlot);
+                connect(buttonSlot, &ButtonSlot::buttonSelected,
+                        this, &MainWindow::selectButtonSlot);
                 gridLayout->addWidget(buttonSlot, i, j);
                 count++;
             }
@@ -184,7 +198,8 @@ void MainWindow::selectButtonSlot(int buttonId)
 {
     ButtonSlot *newButtonSlot = locateButtonSlot(buttonId, s_rows, s_cols);
     if (newButtonSlot) {
-        if (selectedButton != newButtonSlot && selectedButton != nullptr) {
+        if (selectedButton != newButtonSlot
+            && selectedButton != nullptr) {
             selectedButton->setSelected(false);
         }
         selectedButton = newButtonSlot;
@@ -251,5 +266,6 @@ void MainWindow::connectAddress()
 {
     QListWidgetItem *item = ui->deviceList->currentItem();
     //qDebug() << item->text();
-    senderAddress = new QHostAddress(item->text());
+    QHostAddress *senderAddress = new QHostAddress(item->text());
+    networkHandler->setConnection(senderAddress, s_port);
 }

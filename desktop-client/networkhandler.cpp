@@ -1,15 +1,15 @@
-#include "receiver.h"
-#include <QString>
+#include "networkhandler.h"
 
-Receiver::Receiver(QWidget *parent)
-    : QWidget{parent}
+NetworkHandler::NetworkHandler(QObject *parent)
+    : QObject{parent}
 {
     udpSocket = new QUdpSocket(this);
     udpSocket->bind(45454, QUdpSocket::ShareAddress);
-    connect(udpSocket, &QUdpSocket::readyRead, this, &Receiver::processPendingDatagrams);
+    connect(udpSocket, &QUdpSocket::readyRead,
+            this, &NetworkHandler::processPendingDatagrams);
 }
 
-void Receiver::processPendingDatagrams()
+void NetworkHandler::processPendingDatagrams()
 {
     QByteArray datagram;
 
@@ -27,4 +27,18 @@ void Receiver::processPendingDatagrams()
             emit connectionRequest(sender, senderPort);
         }
     }
+}
+
+void NetworkHandler::setConnection(QHostAddress *address, quint16 port)
+{
+    piDashAddress = address;
+
+    QByteArray datagram = "pi-connection-accepted";
+    udpSocket->writeDatagram(datagram, *address, port);
+}
+
+bool NetworkHandler::isConnected()
+{
+    if (piDashAddress) return true;
+    return false;
 }

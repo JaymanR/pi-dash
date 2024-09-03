@@ -13,7 +13,7 @@
 #include <QKeySequence>
 #include <QUdpSocket>
 #include "buttonslot.h"
-#include "receiver.h"
+#include "networkhandler.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -63,8 +63,8 @@ private:
     QWidget *buttonToolbar;
     QKeySequence recordedKeySequence;
 
-    Receiver *receiver;
-    QHostAddress *senderAddress;
+    NetworkHandler *networkHandler;
+    //QHostAddress *senderAddress;
 
 private slots:
     void selectButtonSlot(int buttonId);

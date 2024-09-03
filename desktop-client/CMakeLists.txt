@@ -27,7 +27,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         buttonslot.h buttonslot.cpp
         hotkey.h hotkey.cpp
         hotkeyedit.h hotkeyedit.cpp
-        receiver.h receiver.cpp
+        networkhandler.h networkhandler.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET desktop-client APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

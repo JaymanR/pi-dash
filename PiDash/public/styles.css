@@ -12,10 +12,10 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 10vw;
+    gap: 5vw; /* Ensure consistent gap between buttons */
     width: 60vw;
     height: 60vw;
-    max-height: 100vh;
+    max-height: 80vh;
     justify-content: center;
     align-items: center;
 }

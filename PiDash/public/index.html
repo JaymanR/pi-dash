@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PiDash Interface</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="button-container" id="buttons">
+        <!-- Buttons will be created dynamically -->
+    </div>
+    <script>
+        const numButtons = 6; // Number of buttons
+        const buttonContainer = document.getElementById('buttons');
+        const ws = new WebSocket('ws://localhost:3000');
+
+        for (let i = 1; i <= numButtons; i++) {
+            const button = document.createElement('div');
+            button.className = 'button-slot';
+            button.innerText = `Button ${i}`;
+            button.onclick = () => sendHotkeyRequest(i);
+            buttonContainer.appendChild(button);
+        }
+
+        function sendHotkeyRequest(buttonId) {
+            ws.send(JSON.stringify({ buttonId }));
+        }
+    </script>
+</body>
+</html>

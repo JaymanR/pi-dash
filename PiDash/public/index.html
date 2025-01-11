@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PiDash Interface</title>
+    <title>PiDash</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <div class="button-container" id="buttons">
-        <!-- Buttons will be created dynamically -->
     </div>
     <script>
-        const numButtons = 6; // Number of buttons
+        const numButtons = 6;
         const buttonContainer = document.getElementById('buttons');
         const ws = new WebSocket('ws://localhost:3000');
 
